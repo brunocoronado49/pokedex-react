@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import { usePokemonsHook } from "./hooks/usePokemonsHook";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
-import PokeCard from "./components/PokeCard";
+import Home from "./components/Home";
+import Favorites from "./components/Favorites";
 import "./styles/app.css";
 
 function App() {
@@ -16,27 +18,13 @@ function App() {
 
     return (
         <div className="app">
+            <Navbar />
             <Header />
-            {/* <Navbar /> */}
             <div className="content">
-                {loading ? (
-                    <center>
-                        <h1>Cargando Pokemones...</h1>
-                    </center>
-                ) : (
-                    pokemon.map((img, i) => (
-                        <PokeCard
-                            key={i}
-                            img={img.sprites.front_default}
-                            name={img.name}
-                            type={img.types[0].type.name}
-                            ability={img.abilities[0].ability.name}
-                            games={img.game_indices[0].version.name}
-                            gamesLenght={img.game_indices.length}
-                            experience={img.base_experience}
-                        />
-                    ))
-                )}
+                <Routes>
+                    <Route path="/" element={<Home pokemon={pokemon} loading={loading} />} />
+                    <Route path="/favoritos" element={<Favorites />} />
+                </Routes>
             </div>
         </div>
     );
