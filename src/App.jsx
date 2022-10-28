@@ -9,11 +9,10 @@ import "./styles/app.css";
 
 function App() {
     const [loading, setLoading] = useState(true);
-    const [, pokemon] = usePokemonsHook();
+    const [, pokemon, addToFav, myPokemon] = usePokemonsHook();
 
     setTimeout(() => {
         setLoading(false);
-        console.log(pokemon);
     }, 1000);
 
     return (
@@ -22,8 +21,11 @@ function App() {
             <Header />
             <div className="content">
                 <Routes>
-                    <Route path="/" element={<Home pokemon={pokemon} loading={loading} />} />
-                    <Route path="/favoritos" element={<Favorites />} />
+                    <Route
+                        path="/"
+                        element={<Home pokemon={pokemon} loading={loading} addToFav={addToFav} />}
+                    />
+                    <Route path="/favoritos" element={<Favorites myPokemon={myPokemon} />} />
                 </Routes>
             </div>
         </div>

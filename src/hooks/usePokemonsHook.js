@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { url } from '../services/api'
+import { url } from "../services/api";
 
 export const usePokemonsHook = () => {
     const [result, setResult] = useState([]);
     const [pokemon, setPokemon] = useState([]);
+    const [myPokemon, setMyPokemon] = useState([]);
     const arr = [];
+    const newArray = [];
 
     useEffect(() => {
         fetch(url)
@@ -21,5 +23,12 @@ export const usePokemonsHook = () => {
             );
     }, []);
 
-    return [result, pokemon];
+    const addToFav = (name) => {
+        const res = pokemon.filter((poke) => poke.name === name);
+        newArray.push(res[0]);
+        setMyPokemon(newArray);
+        alert("Agregado a favoritos")
+    };
+
+    return [result, pokemon, addToFav, myPokemon];
 };

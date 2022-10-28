@@ -1,6 +1,6 @@
 import PokeCard from "./PokeCard";
 
-const Home = ({ pokemon, loading }) => {
+const Home = ({ pokemon, loading, addToFav }) => {
     return (
         <div className="home">
             {loading ? (
@@ -18,6 +18,7 @@ const Home = ({ pokemon, loading }) => {
                         games={img.game_indices[0].version.name}
                         gamesLenght={img.game_indices.length}
                         experience={img.base_experience}
+                        addToFav={() => addToFav(img.name)}
                     />
                 ))
             )}

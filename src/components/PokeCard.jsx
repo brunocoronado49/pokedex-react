@@ -9,6 +9,7 @@ const PokeCard = ({
     games,
     gamesLenght,
     experience,
+    addToFav
 }) => {
     return (
         <div className="card">
@@ -21,7 +22,7 @@ const PokeCard = ({
                 <p>
                     Juegos: {gamesLenght} - {games}
                 </p>
-                <button className="btn-add" onClick={() => alert("Favourite")}>
+                <button className="btn-add" onClick={addToFav}>
                     <FavoriteIcon />
                 </button>
             </div>
