@@ -1,0 +1,42 @@
+.card {
+    transition: all 0.5s ease;
+    margin: 20px;
+    border-radius: 15px;
+    background-color: #1e272e;
+    color: #d2dae2;
+    width: 20%;
+    cursor: pointer;
+    float: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    text-align: justify;
+    margin: 10%;
+}
+
+.image {
+    width: 300px;
+}
+
+.btn-add {
+    transition: all 0.5s ease;
+    margin: 5px;
+    padding: 10px;
+    width: 40%;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    color: #000000;
+}
+
+.btn-add:hover {
+    background-color: #000000;
+    color: #d2dae2;
+}

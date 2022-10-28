@@ -1,34 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import { usePokemonsHook } from "./hooks/usePokemonsHook";
+import Header from "./components/Header";
+import PokeCard from "./components/PokeCard";
+import './styles/app.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [loading, setLoading] = useState(true);
+    const [, pokemon] = usePokemonsHook();
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    setTimeout(() => {
+        setLoading(false);
+        console.log(pokemon);
+    }, 1000);
+
+    return (
+        <div className="app">
+            <Header />
+            <hr />
+            <div className="content">
+                {loading ? (
+                    <h1>Cargando...</h1>
+                ) : (
+                    pokemon.map((img, i) => (
+                        <PokeCard
+                            key={i}
+                            img={img.sprites.front_default}
+                            name={img.name}
+                            type={img.types[0].type.name}
+                            ability={img.abilities[0].ability.name}
+                            games={img.game_indices[0].version.name}
+                            gamesLenght={img.game_indices.length}
+                            experience={img.base_experience}
+                        />
+                    ))
+                )}
+            </div>
+        </div>
+    );
 }
 
-export default App
+export default App;
