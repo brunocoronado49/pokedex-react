@@ -19,6 +19,8 @@ const Home = ({ pokemon, loading, addToFav }) => {
                         gamesLenght={img.game_indices.length}
                         experience={img.base_experience}
                         addToFav={() => addToFav(img.name)}
+                        id={img.id}
+                        
                     />
                 ))
             )}

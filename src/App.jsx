@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Favorites from "./components/Favorites";
+import PokeDetail from './components/PokeDetail'
 import "./styles/app.css";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                         element={<Home pokemon={pokemon} loading={loading} addToFav={addToFav} />}
                     />
                     <Route path="/favoritos" element={<Favorites myPokemon={myPokemon} />} />
+                    <Route path="/pokemon/:id" element={<PokeDetail />} />
                 </Routes>
             </div>
         </div>

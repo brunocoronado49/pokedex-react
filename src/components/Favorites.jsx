@@ -18,6 +18,8 @@ const Favorites = ({ myPokemon, loading }) => {
                         games={img.game_indices[0].version.name}
                         gamesLenght={img.game_indices.length}
                         experience={img.base_experience}
+                        addToFav={() => alert("Ya está en tus favoritos")}
+                        id={img.id}
                     />
                 ))
             )}

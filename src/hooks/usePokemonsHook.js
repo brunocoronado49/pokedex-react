@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { url } from "../services/api";
+import { url, getOnePokemon } from "../services/api";
 
 export const usePokemonsHook = () => {
     const [result, setResult] = useState([]);
@@ -24,11 +24,24 @@ export const usePokemonsHook = () => {
     }, []);
 
     const addToFav = (name) => {
-        const res = pokemon.filter((poke) => poke.name === name);
+        const res = pokemon.filter((poke) => poke.name == name);
         newArray.push(res[0]);
-        setMyPokemon(newArray);
-        alert("Agregado a favoritos")
+        setMyPokemon([...myPokemon, res[0]]);
+        alert("Agregado a favoritos");
     };
 
     return [result, pokemon, addToFav, myPokemon];
+};
+
+/// From get one pokemon
+export const useGetOnePokemon = (id) => {
+    const [poke, setPoke] = useState({});
+    const result = getOnePokemon(id);
+
+    useEffect(() => {
+        console.log("Pokemon", result);
+        result.then(prod => setPoke(prod));
+    }, []);
+
+    return poke;
 };
