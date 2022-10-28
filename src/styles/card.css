@@ -2,8 +2,8 @@
     transition: all 0.5s ease;
     margin: 20px;
     border-radius: 15px;
-    background-color: #1e272e;
-    color: #d2dae2;
+    background-color: #efd9b4;
+    color: black;
     width: 20%;
     cursor: pointer;
     float: left;
@@ -27,16 +27,16 @@
     transition: all 0.5s ease;
     margin: 5px;
     padding: 10px;
-    width: 40%;
+    width: 30%;
     border: none;
     border-radius: 15px;
     font-weight: bold;
     font-size: 15px;
     cursor: pointer;
-    color: #000000;
+    color: red;
 }
 
 .btn-add:hover {
-    background-color: #000000;
+    background-color: #333333;
     color: #d2dae2;
 }

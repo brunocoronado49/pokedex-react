@@ -1,3 +1,4 @@
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import "../styles/card.css";
 
 const PokeCard = ({
@@ -21,7 +22,7 @@ const PokeCard = ({
                     Juegos: {gamesLenght} - {games}
                 </p>
                 <button className="btn-add" onClick={() => alert("Favourite")}>
-                    Agregar a favoritos
+                    <FavoriteIcon />
                 </button>
             </div>
         </div>

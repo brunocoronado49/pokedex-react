@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { usePokemonsHook } from "./hooks/usePokemonsHook";
 import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import PokeCard from "./components/PokeCard";
-import './styles/app.css'
+import "./styles/app.css";
 
 function App() {
     const [loading, setLoading] = useState(true);
@@ -16,10 +17,12 @@ function App() {
     return (
         <div className="app">
             <Header />
-            <hr />
+            {/* <Navbar /> */}
             <div className="content">
                 {loading ? (
-                    <h1>Cargando...</h1>
+                    <center>
+                        <h1>Cargando Pokemones...</h1>
+                    </center>
                 ) : (
                     pokemon.map((img, i) => (
                         <PokeCard
