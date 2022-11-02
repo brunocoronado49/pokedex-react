@@ -1,39 +1,13 @@
-import { useState } from "react";
-import axios from "axios";
+import { useSearchPokemon } from "../hooks/usePokemonsHook";
 import "../styles/search.css";
 
 const PokeResult = () => {
-    const [pokeResult, setPokeResult] = useState("");
-    const [pokemonData, setPokemonData] = useState([]);
-    const [pokemonType, setPokemonType] = useState("");
-
-    const handleChange = (evt) => {
-        setPokeResult(evt.target.value.toLowerCase());
-    };
-
-    const handleSubmit = (evt) => {
-        evt.preventDefault();
-        getPokemon();
-    };
-
-    const getPokemon = async () => {
-        const toArray = [];
-        try {
-            const url = `https://pokeapi.co/api/v2/pokemon/${pokeResult}/`;
-            const result = await axios.get(url);
-            toArray.push(result.data);
-            setPokemonType(result.data.types[0].type.name);
-            setPokemonData(toArray);
-        } catch (err) {
-            console.log(err.message);
-        }
-    };
-
-    console.log(pokemonData);
+    const [handleChange, handleSubtmit, pokemonType, pokemonData] =
+        useSearchPokemon();
 
     return (
         <>
-            <form onSubmit={handleSubmit} className="search-form">
+            <form onSubmit={handleSubtmit} className="search-form">
                 <h2 className="search-label">Busca un pokemon</h2>
                 <input
                     onChange={handleChange}
