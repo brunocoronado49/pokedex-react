@@ -22,10 +22,11 @@ const PokeResult = () => {
             <div className="pokeon-result">
                 {pokemonData.map((pokemon, index) => {
                     return (
-                        <div className="container" key={index}>
+                        <div key={index}>
                             <img
                                 src={pokemon.sprites["front_default"]}
                                 alt={pokemon.name}
+                                className="search-image"
                             />
                             <h2>{pokemon.name}</h2>
                             <h3>{pokemonType}</h3>

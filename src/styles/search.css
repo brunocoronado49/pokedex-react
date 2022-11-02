@@ -27,3 +27,18 @@
     background-color: white;
     color: red;
 }
+
+.pokeon-result {
+    align-items: center;
+    padding-top: 80px;
+    text-align: center;
+    padding-top: 40px;
+    padding: 30px;
+    margin: 30px;
+}
+
+.search-image {
+    font-size: 10px;
+}
+
+
