@@ -30,12 +30,12 @@ const PokeCard = ({
                     <FavoriteIcon />
                 </button>
                 <br />
-                {/* <button
+                <button
                     className="btn-add"
                     onClick={() => navigate(`/pokemon/${id}`)}
                 >
                     Detalle
-                </button> */}
+                </button>
             </div>
         </div>
     );

@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Favorites from "./components/Favorites";
-import PokeDetail from './components/PokeDetail'
+import PokeResult from "./components/PokeResult";
 import "./styles/app.css";
 
 function App() {
@@ -24,10 +24,19 @@ function App() {
                 <Routes>
                     <Route
                         path="/"
-                        element={<Home pokemon={pokemon} loading={loading} addToFav={addToFav} />}
+                        element={
+                            <Home
+                                pokemon={pokemon}
+                                loading={loading}
+                                addToFav={addToFav}
+                            />
+                        }
                     />
-                    <Route path="/favoritos" element={<Favorites myPokemon={myPokemon} />} />
-                    <Route path="/pokemon/:id" element={<PokeDetail />} />
+                    <Route
+                        path="/favoritos"
+                        element={<Favorites myPokemon={myPokemon} />}
+                    />
+                    <Route path="/search" element={<PokeResult />} />
                 </Routes>
             </div>
         </div>

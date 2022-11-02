@@ -6,10 +6,19 @@ const Navbar = () => {
         <div className="navbar">
             <ul>
                 <li>
-                    <Link to="/" className="link">Pokemones</Link>
+                    <Link to="/search" className="link">
+                        Buscar
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/favoritos" className="link">Favoritos</Link>
+                    <Link to="/" className="link">
+                        Pokemones
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/favoritos" className="link">
+                        Favoritos
+                    </Link>
                 </li>
             </ul>
         </div>
