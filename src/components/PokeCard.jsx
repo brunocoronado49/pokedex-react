@@ -8,7 +8,6 @@ const PokeCard = ({
     type,
     ability,
     games,
-    gamesLenght,
     experience,
     addToFav,
     id,
@@ -24,7 +23,7 @@ const PokeCard = ({
                 <p>Habilidad: {ability}</p>
                 <p>Experiencia: {experience}</p>
                 <p>
-                    Juegos: {gamesLenght} - {games}
+                    Batallas: {games}
                 </p>
                 <button className="btn-add" onClick={addToFav}>
                     <FavoriteIcon />

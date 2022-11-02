@@ -15,8 +15,7 @@ const Home = ({ pokemon, loading, addToFav }) => {
                         name={img.name}
                         type={img.types[0].type.name}
                         ability={img.abilities[0].ability.name}
-                        games={img.game_indices[0].version.name}
-                        gamesLenght={img.game_indices.length}
+                        games={img.game_indices.length}
                         experience={img.base_experience}
                         addToFav={() => addToFav(img.name)}
                         id={img.id}

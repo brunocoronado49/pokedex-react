@@ -7,8 +7,10 @@ const Favorites = ({ myPokemon, loading }) => {
                 <center>
                     <h1>Cargando Pokemones...</h1>
                 </center>
+            ) : myPokemon.length == 0 ? (
+                <h1>Aún no tienes pokemones</h1>
             ) : (
-              myPokemon.map((img, i) => (
+                myPokemon.map((img, i) => (
                     <PokeCard
                         key={i}
                         img={img.sprites.front_default}
